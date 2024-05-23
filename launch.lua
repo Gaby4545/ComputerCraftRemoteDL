@@ -1,14 +1,20 @@
 print("Hello Rolz!")
 
 local chatBox = peripheral.find("chatBox")
+if chatBox ~= nil then
+    print("Found ChatBox!")
+else
+    print("No ChatBox found")
+end
 
 local function update() shell.run("download") end
 
 local function processChat(event, username, message, uuid, isHidden)
+
     if message == "$update" or message == "$u" then
         print(username .. "called an update")
         chatBox.sendMessage(username .. "called an update")
-        update() 
+        update()
     end
 end
 
@@ -26,4 +32,6 @@ end
 
 require("program")
 
-parallel.waitForAny(mainLoop, waitForChat, waitForKey)
+while true do 
+    parallel.waitForAny(mainLoop, waitForChat, waitForKey)
+end

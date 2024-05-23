@@ -1,8 +1,9 @@
 local ar = peripheral.find("arController")
 if ar ~= nil then
+    print("ARGlasses found!")
     ar.setRelativeMode(true, 1600, 900)
 else
-    print("No ar Glasses found")
+    print("No ARGlasses found")
 end
 
 function mainLoop()
