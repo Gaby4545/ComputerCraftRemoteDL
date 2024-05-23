@@ -30,4 +30,4 @@ local function mainLoop()
     end
 end
 
-parallel.waitForAny(mainloop, waitForChat, waitForKye)
+parallel.waitForAny(mainloop, waitForChat, waitForKey)
