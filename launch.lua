@@ -15,4 +15,13 @@ function processChat(event, username, message, uuid, isHidden)
     end
 end
 
-waitForChat()
+function waitForKey()
+    local event, key, isHeld = os.pullEvent("key")
+    if key = keys.up then
+        update()
+    end
+end
+
+while true then
+    parallel.waitForAny(waitForChat, waitForKey)
+end 
