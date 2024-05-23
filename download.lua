@@ -3,9 +3,10 @@ local baseUrl = "https://raw.githubusercontent.com/Gaby4545/ComputerCraftRemoteD
 function downloadFile(baseUrl, filePath)
     local url = baseUrl .. filePath
     local res = http.get(url)
+    print(url)
 
     local file = fs.open(filePath, "w")
-    file.write(request)
+    file.write(res.readAll())
     file.close()
 end
 
