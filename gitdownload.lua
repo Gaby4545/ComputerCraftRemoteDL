@@ -3,9 +3,8 @@ require("gitAPI")
 
 local args = {...}
 
-/**
- * Uses the gitHub API for getting a tree of the Repo then downloads each file
- */
+
+-- Uses the gitHub API for getting a tree of the Repo then downloads each file
 function downloadRepo(owner, repo, branch)
     local trees = getGitTrees(owner, repo, branch)
     if trees == nil then
