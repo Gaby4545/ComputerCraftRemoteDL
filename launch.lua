@@ -25,7 +25,7 @@ local function waitForKey()
 end
 
 local function mainLoop()
-    while (true)
+    while (true) do
     sleep(1)
     end
 end
