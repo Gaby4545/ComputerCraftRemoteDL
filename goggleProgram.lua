@@ -1,16 +1,11 @@
 local args = {...}
 
-local ar = nil
-if args[1] ~= nil then 
-    ar = args[1]
+local ar = peripheral.find("arController")
+if ar ~= nil then
+    print("ARGlasses found!")
+    ar.setRelativeMode(true, 1600, 900)
 else
-    ar = peripheral.find("arController")
-    if ar ~= nil then
-        print("ARGlasses found!")
-        ar.setRelativeMode(true, 1600, 900)
-    else
-        print("No ARGlasses found")
-    end
+    print("No ARGlasses found")
 end
 
 function mainLoop()

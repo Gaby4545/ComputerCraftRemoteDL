@@ -30,5 +30,5 @@ end
 allGoggles = peripherals["arController"];
 if allGoggles ~= null then
     local goggles = allGoggles[1]
-    shell.run("background", "goggleProgram", goggles)
+    shell.run("background", "goggleProgram")
 end
