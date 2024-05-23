@@ -5,7 +5,7 @@ else
     print("No ar Glasses found")
 end
 
-local function mainLoop()
+function mainLoop()
     while true do
         if ar ~= nil then
             ar.clear() 
