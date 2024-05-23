@@ -22,6 +22,6 @@ function waitForKey()
     end
 end
 
-while true then
+while true
     parallel.waitForAny(waitForChat, waitForKey)
 end 
