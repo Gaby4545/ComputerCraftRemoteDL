@@ -10,7 +10,8 @@ function mainLoop()
     while true do
         if ar ~= nil then
             ar.clear() 
-            ar.drawRightboundString(os.date(), -10, 10, 0xffffff)
+            ar.drawRightboundString("Hello!", -10, 10, 0xffffff)
+            ar.drawRightboundString(os.date(), -20, 10, 0xffffff)
         end
 
         sleep(1);
