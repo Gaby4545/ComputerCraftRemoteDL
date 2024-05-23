@@ -38,6 +38,8 @@ end
 
 -- Uses the gitHub API for getting a tree of the Repo then downloads every file
 function downloadRepo(owner, repo, branch)
+    print("Downloading from GitHub branch " .. branch .. " of Repo " .. owner .. "/" .. repo )
+
     local trees = getGitTrees(owner, repo, branch)
     if trees == nil then
         print("Could not retrieve fileTree from API")
@@ -46,11 +48,17 @@ function downloadRepo(owner, repo, branch)
 
     for k, v in pairs(trees["tree"]) do
         local path = v["path"]
-
+        print("Downloading: ../" .. path)
         downloadFile(getRawUrl(owner, repo, branch), path)
     end
 end
 
--- Executing the Download!
-downloadRepo(owner, repo, branch)
-shell.run("reboot")
+-- Download from GitHub then Reboot
+function install()
+    downloadRepo(owner, repo, branch)
+
+    print("Rebooting!")
+    shell.run("reboot")
+end
+
+install()
