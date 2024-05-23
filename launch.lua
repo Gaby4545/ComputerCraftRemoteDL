@@ -24,6 +24,6 @@ local function waitForKey()
     end
 end
 
-require("program.lua")
+require("program")
 
 parallel.waitForAny(mainLoop, waitForChat, waitForKey)
