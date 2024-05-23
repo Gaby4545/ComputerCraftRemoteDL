@@ -10,5 +10,6 @@ function downloadFile(baseUrl, filePath)
 end
 
 downloadFile(baseUrl, "download.lua")
+downloadFile(baseUrl, "launch.lua")
 
 shell.run("launch")
