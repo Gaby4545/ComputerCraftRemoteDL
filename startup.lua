@@ -9,6 +9,7 @@ terminal = term.native()
 -- Global table that will contain all peripherals
 peripherals = {} -- Stores all connected peripherals
 
+print()
 print("Finding Peripherals")
 -- Iterate over all peripherals and store them in the table
 for i, face in ipairs(faces) do
@@ -23,4 +24,11 @@ for i, face in ipairs(faces) do
 
      -- Storing the peripheral
     table.insert(peripherals[type], peripheral.wrap(face))
+end
+
+-- If there are goggles, let's run the goggleProgram!
+allGoggles = peripherals["arController"];
+if allGoggles ~= null then
+    local goggles = allGoggles[1]
+    shell.run("background", "goggleProgram", goggles)
 end
