@@ -5,7 +5,7 @@ function downloadFile(baseUrl, filePath)
     print("Downloading : " .. url)
     local res = http.get(url)
 
-    if (res == "" or res == nil) return nil
+    if res == "" or res == nil then return nil
 
     local file = fs.open(filePath, "w")
     file.write(res.readAll())
