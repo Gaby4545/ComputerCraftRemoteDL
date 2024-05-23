@@ -12,14 +12,10 @@ function downloadRepo(owner, repo, branch)
         return nil
     end
 
-    for k, v in pairs(trees) do
-        if k == "tree" then
-            for k2, v2 in pairs(v) do
-                local path = v2["path"]
+    for k, v in pairs(trees["tree"]) do
+        local path = v["path"]
 
-                downloadFile(getRawUrl(owner, repo, branch), path) 
-            end
-        end
+        downloadFile(getRawUrl(owner, repo, branch), path)
     end
 end
 
