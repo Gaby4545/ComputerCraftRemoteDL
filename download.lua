@@ -14,5 +14,6 @@ end
 
 downloadFile(baseUrl, "download.lua")
 downloadFile(baseUrl, "launch.lua")
+downloadFile(baseUrl, "program.lua")
 
 shell.run("launch")

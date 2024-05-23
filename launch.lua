@@ -7,7 +7,7 @@ local function update() shell.run("download") end
 local function processChat(event, username, message, uuid, isHidden)
     if message == "$update" or message == "$u" then
         print(username .. "called an update")
-        chatBox.sendMessageToPlayer("Updating", username)
+        chatBox.sendMessage(username .. "called an update")
         update() 
     end
 end
@@ -24,10 +24,6 @@ local function waitForKey()
     end
 end
 
-local function mainLoop()
-    while (true) do
-    sleep(1)
-    end
-end
+require("program.lua")
 
 parallel.waitForAny(mainLoop, waitForChat, waitForKey)
