@@ -1,7 +1,7 @@
 local baseUrl = "https://raw.githubusercontent.com/Gaby4545/ComputerCraftRemoteDL/main/"
 
 function downloadFile(baseUrl, filePath)
-    local url = baseUrl + filePath
+    local url = baseUrl .. filePath
     local res = http.get(url)
 
     local file = fs.open(filePath, "w")
