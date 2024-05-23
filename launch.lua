@@ -22,4 +22,10 @@ local function waitForKey()
     end
 end
 
-parallel.waitForAny(waitForChat, waitForKey)
+local function mainLoop()
+    while (true)
+    sleep(1)
+    end
+end
+
+parallel.waitForAny(mainloop, waitForChat, waitForKye)
