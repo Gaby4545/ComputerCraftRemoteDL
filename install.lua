@@ -1,6 +1,6 @@
 -- This file is a self contained downloader for ease of install using pastebin
--- https://pastebin.com/dwKDnvk8
--- pastebin get dwKDnvk8 install.lua
+-- https://pastebin.com/6cadS8nS
+-- pastebin get 6cadS8nS install.lua
 
 local baseRawUrl = "https://raw.githubusercontent.com/"
 local baseApiUrl = "https://api.github.com/"
@@ -53,3 +53,4 @@ end
 
 -- Executing the Download!
 downloadRepo(owner, repo, branch)
+shell.run("reboot")
