@@ -1,10 +1,6 @@
 local baseRawUrl = "https://raw.githubusercontent.com/"
 local baseApiUrl = "https://api.github.com/"
 
-local owner = "Gaby4545"
-local repo = "ComputerCraftRemoteDL"
-local branch = "main"
-
 
 function getRawUrl(owner, repo, branch)
     return baseRawUrl .. "" .. owner .. "/" .. repo .. "/" .. branch .. "/"
