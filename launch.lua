@@ -17,7 +17,7 @@ end
 
 function waitForKey()
     local event, key, isHeld = os.pullEvent("key")
-    if key = keys.up then
+    if key == keys.up then
         update()
     end
 end
