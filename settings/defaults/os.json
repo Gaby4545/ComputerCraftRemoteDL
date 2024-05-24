@@ -1,0 +1,6 @@
+{
+    "launchForeGroundApps": [],
+    "launchBackGroundApps": [
+        "apps/goggleProgram"
+    ]
+}

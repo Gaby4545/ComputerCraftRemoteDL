@@ -1,5 +1,5 @@
 require("download")
-require("gitAPI")
+require("api/gitAPI")
 
 local args = {...}
 
