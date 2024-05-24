@@ -16,7 +16,7 @@ function downloadRepo(owner, repo, branch)
 
     for k, v in pairs(trees["tree"]) do
         local path = v["path"]
-        print("Downloading: ../" .. path)
+        print("/" .. path)
         downloadFile(getRawUrl(owner, repo, branch), path)
     end
 end
