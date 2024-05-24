@@ -33,6 +33,9 @@ function main()
     print()
     findPeripherals()
 
+    -- Adding apps to path
+    shell.setPath(shell.path() .. ":/apps")
+
     -- If there are goggles, let's run the goggleProgram!
     allGoggles = peripherals["arController"];
     if allGoggles ~= null then
