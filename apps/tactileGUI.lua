@@ -14,6 +14,8 @@ function main()
     window.setTextColour(colours.white)
     window.clear()
     window.write("Testing my window!")
+
+    waitForClick()
 end
 
 main()
