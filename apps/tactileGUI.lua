@@ -1,5 +1,11 @@
 
 
+function waitForClick()
+    while true do
+        local event, button, x, y = os.pullEvent("mouse_click")
+        print("Button", button, "was clicked at", x, ",", y)
+    end
+end
 
 --- The start of it all
 function main() 
