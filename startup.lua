@@ -34,11 +34,18 @@ end
 
 --- Checks the config for autoLaunching programs
 function autoLaunch()
-    print("AutoLaunching")
-    local startupConf = getConfig("system", "startup.json")
 
+    print("Getting startup settings")
+    local startupConf = getConfig("system", "startup.json")
+    
+    print("AutoLaunching Services")
     for i, program in ipairs(startupConf["launchServices"]) do 
         shell.openTab(program)
+    end
+
+    print("AutoLaunching Apps")
+    for i, program in ipairs(startupConf["launchApps"]) do 
+        shell.launch(program)
     end
 end
 
