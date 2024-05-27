@@ -1,7 +1,7 @@
 -- This is a script for loading different programs at boot
 -- This file should be launched automaticaly on boot because it's name is startup.lua
 
-require("/api/configAPI.lua")
+require("/api/configAPI")
 
 -- Getting the ids of all peripherals that are connected
 faces = peripheral.getNames()
