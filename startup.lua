@@ -14,6 +14,7 @@ peripherals = {}
 
 
 function findPeripherals()
+    print()
     print("Finding Peripherals")
     -- Iterate over all peripherals and store them in the table
     for i, face in ipairs(faces) do
@@ -42,13 +43,11 @@ function autoLaunch()
 end
 
 function main()
-    print()
-    findPeripherals()
-
     -- Adding apps to path
     shell.setPath(shell.path() .. ":/apps")
     shell.setPath(shell.path() .. ":/services")
 
+    findPeripherals()
     autoLaunch()
 end
 

@@ -4,7 +4,7 @@ local baseApiUrl = "https://api.github.com/"
 
 -- Returns a concatenated base URL for raw file downloads on GitHub
 function getRawUrl(owner, repo, branch)
-    return baseRawUrl .. "" .. owner .. "/" .. repo .. "/" .. branch .. "/"
+    return fs.combine(baseRawUrl, owner, repo, branch)
 end
 
 -- Returns a fileTree using the GitHub API

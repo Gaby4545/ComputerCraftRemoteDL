@@ -1,3 +1,5 @@
+terminal = term.current()
+
 window = nil
 
 function waitForClick()
@@ -9,7 +11,7 @@ end
 
 --- The start of it all
 function main() 
-    window = window.create(term.current(), 1, 1, 20, 5)
+    window = window.create(terminal, 1, 1, 20, 5)
     window.setBackgroundColour(colours.grey)
     window.setTextColour(colours.white)
     window.clear()

@@ -1,12 +1,6 @@
 local args = {...}
 
 local ar = peripheral.find("arController")
-if ar ~= nil then
-    print("ARGlasses found!")
-    ar.setRelativeMode(true, 1600, 900)
-else
-    print("No ARGlasses found")
-end
 
 function mainLoop()
     ar.clear()
@@ -23,4 +17,15 @@ function mainLoop()
     end
 end
 
-mainLoop()
+function main()
+    if ar ~= nil then
+        print("ARGlasses found!")
+        ar.setRelativeMode(true, 1600, 900)
+        mainLoop()
+    else
+        print("No ARGlasses found")
+        shell.exit() -- Makes the shell exit after end of program
+    end
+end
+
+main()
