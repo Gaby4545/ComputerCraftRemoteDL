@@ -1,7 +1,7 @@
 
 local configPath = "/config/"
 
-local defaultConfigPath = "/config/default/"
+local defaultConfigPath = "/config/defaults/"
 
 
 function copyDefaultConfig(program, path)
