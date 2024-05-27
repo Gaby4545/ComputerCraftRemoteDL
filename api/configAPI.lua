@@ -8,9 +8,10 @@ function copyDefaultConfig(program, path)
     local originPath = fs.combine(defaultConfigPath, program, path)
     local destPath = fs.combine(configPath, program, path)
 
-    if fs.exists(originPath) and fs.exists(destPath) then
-
-    fs.copy(originPath, destPath)
+    if fs.exists(originPath) and fs.exists(destPath) then 
+        fs.copy(originPath, destPath)
+        return true;
+    end
 
     return false
 end
@@ -27,7 +28,7 @@ function getConfig(program, path)
     else
         file.close()
 
-        if (copyDefaultConfig(program, path)) then return getConfig(program, path) end
+        if copyDefaultConfig(program, path) then return getConfig(program, path) end
 
         return res
     end
