@@ -20,17 +20,12 @@ function copyDefaultConfig(program, path)
 end
 
 function getConfig(program, path)
-    print(program)
-    print(path)
     local file = io.open(fs.combine(configPath, program, path))
-    data = file.read("a")
+    print(file)
 
     local res = nil
-
-    print(data)
-
-    if data ~= nil then
-        res = textutils.unserializeJSON(data.readAll())
+    if file ~= nil then
+        res = textutils.unserializeJSON(file.readAll())
         file.close()
     else
         file.close()
