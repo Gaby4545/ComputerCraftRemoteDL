@@ -34,8 +34,11 @@ end
 --- Checks the config for autoLaunching programs
 function autoLaunch()
     print("AutoLaunching")
-    print(getConfig("system", "startup.json"))
+    local startupConf = getConfig("system", "startup.json")
 
+    for program in startupConf["launchServices"] do 
+        shell.openTab(program)
+    end
 end
 
 function main()
