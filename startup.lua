@@ -47,6 +47,7 @@ function main()
 
     -- Adding apps to path
     shell.setPath(shell.path() .. ":/apps")
+    shell.setPath(shell.path() .. ":/services")
 
     autoLaunch()
 end
