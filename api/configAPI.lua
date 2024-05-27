@@ -8,6 +8,9 @@ function copyDefaultConfig(program, path)
     local originPath = fs.combine(defaultConfigPath, program, path)
     local destPath = fs.combine(configPath, program, path)
 
+    print(originPath)
+    print(fs.exists(originPath))
+
     if fs.exists(originPath) then 
         fs.copy(originPath, destPath)
         return true;
@@ -21,6 +24,8 @@ function getConfig(program, path)
     data = file.read("a")
 
     local res = nil
+
+    print(data)
 
     if data ~= nil then
         res = textutils.unserializeJSON(data.readAll())
