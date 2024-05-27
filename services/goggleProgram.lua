@@ -15,7 +15,7 @@ function mainLoop()
 
     while true do
         if ar ~= nil then
-            ar.clearElement("time") 
+            ar.clearElement("time")
             ar.drawStringWithId("time", os.date(), 10, 10, 0xffffff)
         end
 

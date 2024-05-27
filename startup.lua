@@ -1,7 +1,7 @@
 -- This is a script for loading different programs at boot
 -- This file should be launched automaticaly on boot because it's name is startup.lua
 
-require("/api/configAPI")
+require("/api/configAPI.lua")
 
 -- Getting the ids of all peripherals that are connected
 faces = peripheral.getNames()
@@ -44,12 +44,7 @@ function main()
     -- Adding apps to path
     shell.setPath(shell.path() .. ":/apps")
 
-    -- If there are goggles, let's run the goggleProgram!
-    allGoggles = peripherals["arController"];
-    if allGoggles ~= null then
-        local goggles = allGoggles[1]
-        shell.run("background", "goggleProgram")
-    end
+    autoLaunch()
 end
 
 main()

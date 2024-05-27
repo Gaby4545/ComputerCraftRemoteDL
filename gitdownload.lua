@@ -6,7 +6,7 @@ local args = {...}
 
 -- Uses the gitHub API for getting a tree of the Repo then downloads every file
 function downloadRepo(owner, repo, branch)
-    print("Downloading from GitHub branch " .. branch .. " of Repo " .. owner .. "/" .. repo )
+    print("Downloading from GitHub branch " .. branch .. " of Repo " .. owner .. "/" .. repo)
 
     local trees = getGitTrees(owner, repo, branch)
     if trees == nil then
