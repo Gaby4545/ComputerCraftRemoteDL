@@ -32,6 +32,6 @@ end
 
 require("program")
 
-while true do 
+while true do
     parallel.waitForAny(mainLoop, waitForChat, waitForKey)
 end

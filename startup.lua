@@ -1,6 +1,8 @@
 -- This is a script for loading different programs at boot
 -- This file should be launched automaticaly on boot because it's name is startup.lua
 
+require("/api/configAPI")
+
 -- Getting the ids of all peripherals that are connected
 faces = peripheral.getNames()
 
@@ -11,7 +13,7 @@ terminal = term.native()
 peripherals = {}
 
 
-function findPeripherals() 
+function findPeripherals()
     print("Finding Peripherals")
     -- Iterate over all peripherals and store them in the table
     for i, face in ipairs(faces) do
@@ -29,7 +31,13 @@ function findPeripherals()
     end
 end
 
-function main() 
+--- Checks the config for autoLaunching programs
+function autoLaunch()
+    print(getConfig("system", "startup.json"))
+
+end
+
+function main()
     print()
     findPeripherals()
 
