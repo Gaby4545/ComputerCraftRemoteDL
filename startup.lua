@@ -36,7 +36,7 @@ function autoLaunch()
     print("AutoLaunching")
     local startupConf = getConfig("system", "startup.json")
 
-    for program in startupConf["launchServices"] do 
+    for i, program in ipairs(startupConf["launchServices"]) do 
         shell.openTab(program)
     end
 end
