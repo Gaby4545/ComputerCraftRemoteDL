@@ -8,9 +8,6 @@ function copyDefaultConfig(program, path)
     local originPath = fs.combine(defaultConfigPath, program, path)
     local destPath = fs.combine(configPath, program, path)
 
-    print(originPath)
-    print(fs.exists(originPath))
-
     if fs.exists(originPath) then 
         fs.copy(originPath, destPath)
         return true;
@@ -21,12 +18,11 @@ end
 
 function getConfig(program, path)
     local file = io.open(fs.combine(configPath, program, path))
-    print(file)
 
     local res = nil
     if file ~= nil then
-        res = textutils.unserializeJSON(file.readAll())
-        file.close()
+        res = textutils.unserializeJSON(file:read("a"))
+        file:close()
     else
         if copyDefaultConfig(program, path) then return getConfig(program, path) end
 
