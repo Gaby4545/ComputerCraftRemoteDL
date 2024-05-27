@@ -28,8 +28,6 @@ function getConfig(program, path)
         res = textutils.unserializeJSON(file.readAll())
         file.close()
     else
-        file.close()
-
         if copyDefaultConfig(program, path) then return getConfig(program, path) end
 
         return res
