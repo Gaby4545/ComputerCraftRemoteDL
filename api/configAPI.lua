@@ -20,6 +20,8 @@ function copyDefaultConfig(program, path)
 end
 
 function getConfig(program, path)
+    print(program)
+    print(path)
     local file = io.open(fs.combine(configPath, program, path))
     data = file.read("a")
 
