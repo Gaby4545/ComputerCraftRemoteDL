@@ -1,8 +1,8 @@
 {
     "launchApps": [
-        "apps/tactileGUI"
+        "tactileGUI"
     ],
     "launchServices": [
-        "service/goggleProgram"
+        "goggleService"
     ]
 }
