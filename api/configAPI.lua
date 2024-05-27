@@ -43,13 +43,13 @@ function getConfig(program, path)
     return res
 end
 
-function getConfig(path)
-    getConfig(shell.getRunningProgram(), path)
-end
+--function getConfig(path)
+--    getConfig(shell.getRunningProgram(), path)
+--end
 
-function getConfig()
+--function getConfig()
     -- getConfig(shell.getRunningProgram())
-end
+--end
 
 
 function setConfig(program, path, value)
