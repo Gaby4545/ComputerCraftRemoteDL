@@ -1,21 +1,21 @@
-terminal = term.current()
-termX, termY = terminal.getSize()
+local terminal = term.current()
+local termX, termY = terminal.getSize()
 
 
-win = nil
-actionBar = nil
+local win = nil
+local actionBar = nil
 
-buttons = {}
+local buttons = {}
 
-function handleClick(button, x, y) 
+local function handleClick(button, x, y) 
 
 end
 
-function waitForClick()
+local function waitForClick()
     while true do
         local event, button, x, y = os.pullEvent("mouse_click")
         actionBar.clear()
-        actionBar.setCursorPos(1, 5)
+        actionBar.setCursorPos(5, 1)
         actionBar.write("Btn" .. button .. ": " .. x .. "," .. y)
 
         actionBar.setCursorPos(1, 1)
@@ -25,14 +25,14 @@ function waitForClick()
     end
 end
 
-function launchAppInWin(app)
+local function launchAppInWin(app)
     term.redirect(win)
     shell.run(app)
     term.redirect(terminal)
 end
 
 --- The start of it all
-function main() 
+local function main() 
     terminal.clear()
     win = window.create(terminal, 1, 1, termX, termY-1)
     win.setBackgroundColour(colours.black)

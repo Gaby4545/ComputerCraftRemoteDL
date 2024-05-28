@@ -1,10 +1,10 @@
-terminal = term.current()
+local terminal = term.current()
 
-function handleClick(button, x, y) 
+local function handleClick(button, x, y) 
 
 end
 
-function waitForClick()
+local function waitForClick()
     while true do
         local event, button, x, y = os.pullEvent("mouse_click")
         terminal.clear()
