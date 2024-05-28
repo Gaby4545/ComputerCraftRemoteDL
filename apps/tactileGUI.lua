@@ -7,16 +7,16 @@ actionBar = nil
 
 buttons = {}
 
-function handleClick() 
+function handleClick(button, x, y) 
 
 end
 
 function waitForClick()
     while true do
         local event, button, x, y = os.pullEvent("mouse_click")
-        win.clear()
-        win.setCursorPos(1, 1)
-        win.write("Btn" .. button .. ": " .. x .. "," .. y)
+        actionBar.clear()
+        actionBar.setCursorPos(5, 1)
+        actionBar.write("Btn" .. button .. ": " .. x .. "," .. y)
 
         handleClick(button, x, y) 
     end
@@ -26,14 +26,19 @@ end
 function main() 
     terminal.clear()
     win = window.create(terminal, 1, 1, termX, termY-1)
-    win.setBackgroundColour(colours.lightGrey)
+    win.setBackgroundColour(colours.black)
     win.setTextColour(colours.white)
     win.clear()
     win.write("Testing my window!")
 
+    term.redirect(win)
+    shell.run("home")
+    term.redirect(terminal)
+
     actionBar = window.create(terminal, 1, termY-1, termX, termY-1)
 
     actionBar.setCursorPos(1, 2)
+    win.setBackgroundColour(colours.lightGrey)
     actionBar.setBackgroundColour(colours.grey)
     actionBar.write("Back")
 
