@@ -31,16 +31,16 @@ function main()
     win.clear()
     win.write("Testing my window!")
 
-    term.redirect(win)
-    shell.run("home")
-    term.redirect(terminal)
-
     actionBar = window.create(terminal, 1, termY-1, termX, termY-1)
 
     actionBar.setCursorPos(1, 2)
     win.setBackgroundColour(colours.lightGrey)
     actionBar.setBackgroundColour(colours.grey)
     actionBar.write("Back")
+
+    term.redirect(win)
+    shell.run("home")
+    term.redirect(terminal)
 
     waitForClick()
 end
