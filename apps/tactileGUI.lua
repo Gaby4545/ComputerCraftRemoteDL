@@ -15,7 +15,7 @@ function waitForClick()
     while true do
         local event, button, x, y = os.pullEvent("mouse_click")
         actionBar.clear()
-        actionBar.setCursorPos(5, 1)
+        actionBar.setCursorPos(1, 5)
         actionBar.write("Btn" .. button .. ": " .. x .. "," .. y)
 
         handleClick(button, x, y) 
@@ -31,9 +31,9 @@ function main()
     win.clear()
     win.write("Testing my window!")
 
-    actionBar = window.create(terminal, 1, termY-1, termX, termY-1)
+    actionBar = window.create(terminal, 1, termY, termX, termY)
 
-    actionBar.setCursorPos(1, 2)
+    actionBar.setCursorPos(1, 1)
     win.setBackgroundColour(colours.lightGrey)
     actionBar.setBackgroundColour(colours.grey)
     actionBar.write("Back")
