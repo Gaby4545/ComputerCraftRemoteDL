@@ -15,7 +15,7 @@ local function waitForClick()
     while true do
         local event, button, x, y = os.pullEvent("mouse_click")
         actionBar.clear()
-        actionBar.setCursorPos(5, 1)
+        actionBar.setCursorPos(6, 1)
         actionBar.write("Btn" .. button .. ": " .. x .. "," .. y)
 
         actionBar.setCursorPos(1, 1)

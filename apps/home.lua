@@ -1,4 +1,6 @@
 local terminal = term.current()
+print("uwu")
+print(terminal)
 
 local function handleClick(button, x, y) 
 
@@ -16,5 +18,5 @@ local function waitForClick()
         handleClick(button, x, y) 
     end
 end
-
+print("HERE")
 waitForClick()
