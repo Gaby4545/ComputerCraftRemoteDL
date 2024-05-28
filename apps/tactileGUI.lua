@@ -2,7 +2,7 @@ terminal = term.current()
 termX, termY = terminal.getSize()
 
 
-window = nil
+win = nil
 actionBar = nil
 
 buttons = {}
@@ -14,9 +14,9 @@ end
 function waitForClick()
     while true do
         local event, button, x, y = os.pullEvent("mouse_click")
-        window.clear()
-        window.setCursorPos(1, 1)
-        window.write("Btn" .. button .. ": " .. x .. "," .. y)
+        win.clear()
+        win.setCursorPos(1, 1)
+        win.write("Btn" .. button .. ": " .. x .. "," .. y)
 
         handleClick(button, x, y) 
     end
@@ -25,11 +25,11 @@ end
 --- The start of it all
 function main() 
     terminal.clear()
-    window = window.create(terminal, 1, 1, termX, termY-1)
-    window.setBackgroundColour(colours.lightGrey)
-    window.setTextColour(colours.white)
-    window.clear()
-    window.write("Testing my window!")
+    win = window.create(terminal, 1, 1, termX, termY-1)
+    win.setBackgroundColour(colours.lightGrey)
+    win.setTextColour(colours.white)
+    win.clear()
+    win.write("Testing my window!")
 
     actionBar = window.create(terminal, 1, termY-1, termX, termY-1)
 
