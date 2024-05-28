@@ -18,8 +18,17 @@ function waitForClick()
         actionBar.setCursorPos(1, 5)
         actionBar.write("Btn" .. button .. ": " .. x .. "," .. y)
 
+        actionBar.setCursorPos(1, 1)
+        actionBar.write("Back")
+
         handleClick(button, x, y) 
     end
+end
+
+function launchAppInWin(app)
+    term.redirect(win)
+    shell.run(app)
+    term.redirect(terminal)
 end
 
 --- The start of it all
@@ -34,15 +43,11 @@ function main()
     actionBar = window.create(terminal, 1, termY, termX, termY)
 
     actionBar.setCursorPos(1, 1)
-    win.setBackgroundColour(colours.lightGrey)
+    actionBar.setBackgroundColour(colours.lightGrey)
     actionBar.setBackgroundColour(colours.grey)
     actionBar.write("Back")
 
-    term.redirect(win)
-    shell.run("home")
-    term.redirect(terminal)
-
-    waitForClick()
+    parallel.waitForAny(waitForClick, function() launchAppInWin(app) end)
 end
 
 main()
