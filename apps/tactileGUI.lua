@@ -10,7 +10,7 @@ function waitForClick()
         local event, button, x, y = os.pullEvent("mouse_click")
         window.clear()
         window.setCursorPos(1, 1)
-        window.write("Button" .. button .. "was clicked at" .. x .. "," .. y)
+        window.write("Btn" .. button .. ": " .. x .. "," .. y)
     end
 end
 
