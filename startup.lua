@@ -45,7 +45,7 @@ function autoLaunch()
 
     print("AutoLaunching Apps")
     for i, program in ipairs(startupConf["launchApps"]) do 
-        shell.launch(program)
+        shell.run(program)
     end
 end
 
