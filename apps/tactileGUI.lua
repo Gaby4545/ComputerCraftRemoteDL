@@ -26,7 +26,7 @@ end
 function main() 
     terminal.clear()
     window = window.create(terminal, 1, 1, termX, termY-1)
-    window.setBackgroundColour(colours.lightGray)
+    window.setBackgroundColour(colours.lightGrey)
     window.setTextColour(colours.white)
     window.clear()
     window.write("Testing my window!")
