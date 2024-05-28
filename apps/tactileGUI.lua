@@ -47,7 +47,7 @@ function main()
     actionBar.setBackgroundColour(colours.grey)
     actionBar.write("Back")
 
-    parallel.waitForAny(waitForClick, function() launchAppInWin(app) end)
+    parallel.waitForAll(waitForClick, function() launchAppInWin(app) end)
 end
 
 main()
