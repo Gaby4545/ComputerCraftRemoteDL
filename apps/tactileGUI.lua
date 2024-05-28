@@ -48,7 +48,7 @@ local function main()
     actionBar.write("Back")
 
     local function launchAppInWinWrapper()
-        launchAppInWin(app)
+        launchAppInWin("home")
     end
 
     parallel.waitForAll(waitForClick, launchAppInWinWrapper)
